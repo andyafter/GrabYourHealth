@@ -1,7 +1,7 @@
-"""mysite URL Configuration
+"""conduit URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.11/topics/http/urls/
+    https://docs.djangoproject.com/en/1.10/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -13,19 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
-from django.urls import path
-
-from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    # ex: /polls/5/
-    path('<int:question_id>/', views.detail, name='detail'),
-    # ex: /polls/5/results/
-    path('<int:question_id>/results/', views.results, name='results'),
-    # ex: /polls/5/vote/
-    path('<int:question_id>/vote/', views.vote, name='vote'),
+
+    url(r'^api/', include('conduit.apps.articles.urls', namespace='articles')),
+    url(r'^api/', include('conduit.apps.authentication.urls', namespace='authentication')),
+    url(r'^api/', include('conduit.apps.profiles.urls', namespace='profiles')),
 ]
