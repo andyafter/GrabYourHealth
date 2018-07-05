@@ -40,7 +40,7 @@ cards = [
     {
         "title": "Strong Bones",
         "imageUrl": "http://projectmecentral.com/wp-content/uploads/2015/02/calcium-and-bones.jpg", 
-        "description": "Get your daily calcium by drinking milk or eating yoghurt. It’ll keep your bones strong. Remember that your bone density declines after the age of 30. You need at least 200 milligrams daily, which you should combine with magnesium, or it simply won’t be absorbed.\n\n If you happen to be lactose intolerant, try other options like soy milk, coconut milk, almond milk, or rice milk!", 
+        "description": "Get your daily calcium by drinking milk or eating yoghurt. It’ll keep your bones strong. Remember that your bone density declines after the age of 30. You need at least 200 milligrams daily, which you should combine with magnesium, or it simply won't be absorbed.\n\n If you happen to be lactose intolerant, try other options like soy milk, coconut milk, almond milk, or rice milk!",
         "cta":"I have my glass of milk today!",
     },
     {
