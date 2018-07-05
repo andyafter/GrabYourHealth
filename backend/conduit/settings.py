@@ -25,7 +25,7 @@ SECRET_KEY = '2^f+3@v7$v1f8yt0!s)3-1t$)tlp+xm17=*g))_xoi&&9m#2a&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["13.250.37.152"]
+ALLOWED_HOSTS = ["13.250.37.152","localhost"]
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'conduit.apps.articles',
+    'conduit.apps.authentication',
     'conduit.apps.core',
     'conduit.apps.profiles',
 ]
@@ -68,6 +69,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -141,6 +143,9 @@ REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'conduit.apps.core.exceptions.core_exception_handler',
     'NON_FIELD_ERRORS_KEY': 'error',
 
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'conduit.apps.authentication.backends.JWTAuthentication',
+    ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20,
 }
