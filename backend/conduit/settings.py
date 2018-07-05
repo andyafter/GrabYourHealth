@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'conduit.apps.articles',
-    'conduit.apps.authentication',
     'conduit.apps.core',
     'conduit.apps.profiles',
 ]
@@ -69,7 +68,6 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -143,9 +141,6 @@ REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'conduit.apps.core.exceptions.core_exception_handler',
     'NON_FIELD_ERRORS_KEY': 'error',
 
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'conduit.apps.authentication.backends.JWTAuthentication',
-    ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20,
 }
