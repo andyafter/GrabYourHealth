@@ -11,6 +11,9 @@ from .renderers import ArticleJSONRenderer, CommentJSONRenderer
 from .serializers import ArticleSerializer, CommentSerializer, TagSerializer
 
 
+def CardInfo():
+   pass 
+
 class ArticleViewSet(mixins.CreateModelMixin, 
                      mixins.ListModelMixin,
                      mixins.RetrieveModelMixin,
@@ -18,7 +21,6 @@ class ArticleViewSet(mixins.CreateModelMixin,
 
     lookup_field = 'slug'
     queryset = Article.objects.select_related('author', 'author__user')
-    permission_classes = (IsAuthenticatedOrReadOnly,)
     renderer_classes = (ArticleJSONRenderer,)
     serializer_class = ArticleSerializer
 
